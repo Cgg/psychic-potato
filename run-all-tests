@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in `find -iname '*.t.js'`; do
+    echo Testing $i ...
+    node test-runner.js $i
+    echo
+done
+
