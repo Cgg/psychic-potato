@@ -2,7 +2,8 @@ const buildMap = require('../build-map.js');
 
 var tests = {};
 
-tests['builds a map out of an array'] = function (T) {
+tests['builds a map out of an array using the identity as the default ' +
+'transformer function'] = function (T) {
   var input = [
     {id: 1, foo: 'bar'}
   ];
@@ -10,7 +11,18 @@ tests['builds a map out of an array'] = function (T) {
     1: {id: 1, foo: 'bar'}
   };
 
-  T.assert.deepEqual(buildMap(input), expected);
+  T.assert.deepEqual(buildMap(input, 'id'), expected);
+};
+
+tests['can provide a custom transformer function'] = function (T) {
+  var input = [
+    {id: 1, foo: 'bar'}
+  ];
+  var expected = {
+    1: {baz: 'bar'}
+  };
+
+  T.assert.deepEqual(buildMap(input, 'id', o => {return {baz: o.foo};}), expected);
 };
 
 tests['throws if two objects have the same id in the input'] = function (T) {
@@ -20,7 +32,7 @@ tests['throws if two objects have the same id in the input'] = function (T) {
   ];
 
   T.assert.throws(() => {
-    buildArticlesMap(input);
+    buildArticlesMap(input, 'id');
   });
 };
 
