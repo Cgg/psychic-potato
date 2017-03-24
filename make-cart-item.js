@@ -1,7 +1,7 @@
 function makeCartItem (articleId, quantity) {
   return {
     articleId: articleId,
-    quantity: quantity
+    articleQuantity: quantity
   };
 }
 

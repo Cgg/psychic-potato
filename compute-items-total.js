@@ -17,7 +17,7 @@ function computeItemsTotalPrice (items, priceMap) {
       throw new Error('Price not found for this article id: ' + currentArticleId);
     }
 
-    return currentTotal + currentItem.quantity * price;
+    return currentTotal + currentItem.articleQuantity * price;
   }, 0);
 }
 

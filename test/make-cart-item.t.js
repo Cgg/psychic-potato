@@ -9,7 +9,7 @@ tests['make a cart item with an articleId and a quantity field'] = function (T) 
       makeCartItem(expectedId, expectedQuantity),
       {
         articleId: expectedId,
-        quantity: expectedQuantity
+        articleQuantity: expectedQuantity
       });
 };
 
