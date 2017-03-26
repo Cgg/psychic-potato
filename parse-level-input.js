@@ -1,5 +1,6 @@
 const buildMap = require('./build-map');
 const makeCartItem = require('./make-cart-item');
+const makeDeliveryFeeScale = require('./make-delivery-fee-scale');
 
 function makePriceReference (articleArray) {
   return buildMap(articleArray, 'id', a => a.price);
@@ -13,6 +14,10 @@ function makeCarts (cartArray) {
     };
   });
 }
+
+const JSON_KEYS = {
+  DELIVERY_FEES: 'delivery_fees'
+};
 
 /**
  * Parse and validate the level input and returns an object with a known and
@@ -31,10 +36,17 @@ function parseLevelInput (input) {
   // point but here we just JSON.parse it.
   var jsonAsObject = JSON.parse(input);
 
-  return {
+  var result = {
     articlePriceReference: makePriceReference(jsonAsObject.articles),
     carts: makeCarts(jsonAsObject.carts)
   };
+
+  if (jsonAsObject.hasOwnProperty(JSON_KEYS.DELIVERY_FEES)) {
+    result.deliveryFeeScale =
+        makeDeliveryFeeScale(jsonAsObject[JSON_KEYS.DELIVERY_FEES]);
+  }
+
+  return result;
 }
 
 module.exports = parseLevelInput;
