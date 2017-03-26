@@ -21,5 +21,9 @@ tests['LEVEL1 PASS'] = function (T) {
   pass('level1', T);
 };
 
+tests['LEVEL2 PASS'] = function (T) {
+  pass('level2', T);
+};
+
 module.exports = tests;
 
