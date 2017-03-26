@@ -22,15 +22,15 @@ function identity () {
  */
 function buildMap (inputObjectArray, keyName, transformerFunction) {
   return inputObjectArray.reduce(function (currentMap, currentArticle) {
-    var currentArticleId = currentArticle[keyName];
+    var currentKey = currentArticle[keyName];
 
-    if (currentMap[currentArticleId]) {
+    if (currentMap[currentKey]) {
       throw new Error("duplicate article in the input: " + currentArticle);
     }
 
     transformerFunction = transformerFunction || identity;
 
-    currentMap[currentArticleId] = transformerFunction(currentArticle);
+    currentMap[currentKey] = transformerFunction(currentArticle);
 
     return currentMap;
   }, {});
