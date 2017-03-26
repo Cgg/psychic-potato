@@ -16,6 +16,8 @@ function makeCarts (cartArray) {
 }
 
 const JSON_KEYS = {
+  ARTICLES: 'articles',
+  CARTS: 'carts',
   DELIVERY_FEES: 'delivery_fees'
 };
 
@@ -37,8 +39,8 @@ function parseLevelInput (input) {
   var jsonAsObject = JSON.parse(input);
 
   var result = {
-    articlePriceReference: makePriceReference(jsonAsObject.articles),
-    carts: makeCarts(jsonAsObject.carts)
+    articlePriceReference: makePriceReference(jsonAsObject[JSON_KEYS.ARTICLES]),
+    carts: makeCarts(jsonAsObject[JSON_KEYS.CARTS])
   };
 
   if (jsonAsObject.hasOwnProperty(JSON_KEYS.DELIVERY_FEES)) {
