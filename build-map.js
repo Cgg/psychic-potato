@@ -22,7 +22,7 @@ function identity () {
  */
 function buildMap (inputObjectArray, keyName, transformerFunction) {
   return inputObjectArray.reduce(function (currentMap, currentArticle) {
-    var currentArticleId = currentArticle.id;
+    var currentArticleId = currentArticle[keyName];
 
     if (currentMap[currentArticleId]) {
       throw new Error("duplicate article in the input: " + currentArticle);
