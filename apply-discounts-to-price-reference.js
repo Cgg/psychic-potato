@@ -20,7 +20,7 @@ function applyDiscountsToPriceReference (priceRef, discountMap) {
 
     switch (discount.type) {
       case 'percentage':
-        result[id] *=  (discount.value / 100);
+        result[id] -=  result[id] * discount.value / 100;
         break;
       case 'amount':
         result[id] -= discount.value;

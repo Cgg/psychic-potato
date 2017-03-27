@@ -4,7 +4,7 @@ var tests = {};
 
 tests['apply percentage discounts'] = function (T) {
   var discount = {
-    1: {type: 'percentage', value: 50}
+    1: {type: 'percentage', value: 20}
   };
 
   var priceReference = {
@@ -13,7 +13,7 @@ tests['apply percentage discounts'] = function (T) {
 
   T.assert.deepEqual(
       applyDiscountsToPriceReference(priceReference, discount),
-      {1: 50});
+      {1: 80});
 };
 
 tests['apply amount discounts'] = function (T) {
