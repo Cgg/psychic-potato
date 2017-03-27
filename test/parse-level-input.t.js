@@ -67,5 +67,30 @@ tests['add a deliveryFeeScale field in the result if fees in the input'] = funct
   T.assert.deepEqual(parseLevelInput(input), expectedOutput);
 };
 
+tests['add a articleDiscountMap field in the result if discounts in the input'] =
+function (T) {
+  var input = JSON.stringify({
+    articles: [
+    ],
+    carts: [
+    ],
+    discounts: [
+      {article_id: 'foo', type: 'bar', value: 'baz'}
+    ]
+  });
+
+  var expectedOutput = {
+    articlePriceReference: {
+    },
+    carts: [
+    ],
+    articleDiscountMap: {
+      foo: {type: 'bar', value: 'baz'}
+    }
+  };
+
+  T.assert.deepEqual(parseLevelInput(input), expectedOutput);
+};
+
 module.exports = tests;
 

@@ -1,6 +1,7 @@
 const buildMap = require('./build-map');
 const makeCartItem = require('./make-cart-item');
 const makeDeliveryFeeScale = require('./make-delivery-fee-scale');
+const makeDiscountMap = require('./make-discount-map');
 
 function makePriceReference (articleArray) {
   return buildMap(articleArray, 'id', a => a.price);
@@ -18,7 +19,8 @@ function makeCarts (cartArray) {
 const JSON_KEYS = {
   ARTICLES: 'articles',
   CARTS: 'carts',
-  DELIVERY_FEES: 'delivery_fees'
+  DELIVERY_FEES: 'delivery_fees',
+  DISCOUNTS: 'discounts'
 };
 
 /**
@@ -46,6 +48,11 @@ function parseLevelInput (input) {
   if (jsonAsObject.hasOwnProperty(JSON_KEYS.DELIVERY_FEES)) {
     result.deliveryFeeScale =
         makeDeliveryFeeScale(jsonAsObject[JSON_KEYS.DELIVERY_FEES]);
+  }
+
+  if (jsonAsObject.hasOwnProperty(JSON_KEYS.DISCOUNTS)) {
+    result.articleDiscountMap =
+        makeDiscountMap(jsonAsObject[JSON_KEYS.DISCOUNTS]);
   }
 
   return result;
