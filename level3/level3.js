@@ -16,7 +16,7 @@ function level3 (input) {
   var data = parseLevelInput(input);
 
   var discountedPriceReference = applyDiscountsToPrice(
-      data.articlePriceReference,
+      data.articlePriceMap,
       data.articleDiscountMap);
 
   return JSON.stringify({

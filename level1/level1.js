@@ -12,7 +12,7 @@ function level1 (input) {
   var data = parseLevelInput(input);
 
   return JSON.stringify({
-    carts: data.carts.map(makeCheckoutCart.bind(null, data.articlePriceReference))
+    carts: data.carts.map(makeCheckoutCart.bind(null, data.articlePriceMap))
   });
 }
 

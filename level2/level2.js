@@ -16,7 +16,7 @@ function level2 (input) {
 
   return JSON.stringify({
     carts: data.carts.map(makeCheckoutCart.bind(
-        null, data.articlePriceReference, data.deliveryFeeScale))
+        null, data.articlePriceMap, data.deliveryFeeScale))
   });
 }
 

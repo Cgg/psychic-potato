@@ -16,7 +16,7 @@ tests['nominal case'] = function (T) {
   });
 
   var expectedOutput = {
-    articlePriceReference: {
+    articlePriceMap: {
       1: 100
     },
     carts: [
@@ -50,7 +50,7 @@ tests['add a deliveryFeeScale field in the result if fees in the input'] = funct
   });
 
   var expectedOutput = {
-    articlePriceReference: {
+    articlePriceMap: {
       1: 100
     },
     carts: [
@@ -80,7 +80,7 @@ function (T) {
   });
 
   var expectedOutput = {
-    articlePriceReference: {
+    articlePriceMap: {
     },
     carts: [
     ],

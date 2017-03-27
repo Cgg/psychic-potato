@@ -41,7 +41,7 @@ function parseLevelInput (input) {
   var jsonAsObject = JSON.parse(input);
 
   var result = {
-    articlePriceReference: makePriceReference(jsonAsObject[JSON_KEYS.ARTICLES]),
+    articlePriceMap: makePriceReference(jsonAsObject[JSON_KEYS.ARTICLES]),
     carts: makeCarts(jsonAsObject[JSON_KEYS.CARTS])
   };
 
