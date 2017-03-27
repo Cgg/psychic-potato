@@ -1,4 +1,4 @@
-const makePriceMap = require('../make-price-map.js');
+const makePriceMap = require('../parse-input-utils/make-price-map.js');
 
 var tests = {};
 

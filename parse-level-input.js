@@ -1,8 +1,8 @@
-const buildMap = require('./build-map');
-const makePriceMap = require('./make-price-map');
-const makeCartItem = require('./make-cart-item');
-const makeDeliveryFeeScale = require('./make-delivery-fee-scale');
-const makeDiscountMap = require('./make-discount-map');
+const buildMap = require('./parse-input-utils/build-map');
+const makePriceMap = require('./parse-input-utils/make-price-map');
+const makeCartItem = require('./parse-input-utils/make-cart-item');
+const makeDeliveryFeeScale = require('./parse-input-utils/make-delivery-fee-scale');
+const makeDiscountMap = require('./parse-input-utils/make-discount-map');
 
 function makeCarts (cartArray) {
   return cartArray.map(function (c) {

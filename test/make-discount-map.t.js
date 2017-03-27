@@ -1,4 +1,4 @@
-const makeDiscountMap = require('../make-discount-map.js');
+const makeDiscountMap = require('../parse-input-utils/make-discount-map.js');
 
 var tests = {};
 

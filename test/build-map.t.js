@@ -1,4 +1,4 @@
-const buildMap = require('../build-map.js');
+const buildMap = require('../parse-input-utils/build-map.js');
 
 var tests = {};
 

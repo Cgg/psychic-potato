@@ -1,4 +1,4 @@
-const makeDeliveryFeeScale = require('../make-delivery-fee-scale.js');
+const makeDeliveryFeeScale = require('../parse-input-utils/make-delivery-fee-scale.js');
 
 var tests = {};
 

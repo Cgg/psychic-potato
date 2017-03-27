@@ -1,4 +1,5 @@
-const applyDiscountsToPriceReference = require('../apply-discounts-to-price-reference.js');
+const applyDiscountsToPriceReference =
+    require('..//apply-discounts-to-price-reference.js');
 
 var tests = {};
 

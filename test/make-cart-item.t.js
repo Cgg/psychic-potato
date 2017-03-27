@@ -1,4 +1,4 @@
-const makeCartItem = require('../make-cart-item.js');
+const makeCartItem = require('../parse-input-utils/make-cart-item.js');
 const tests = {};
 
 tests['make a cart item with an articleId and a quantity field'] = function (T) {

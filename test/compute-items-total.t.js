@@ -1,4 +1,4 @@
-const makeCartItem = require('../make-cart-item');
+const makeCartItem = require('../parse-input-utils/make-cart-item');
 const computeItemsTotal = require('../compute-items-total.js');
 
 const tests = {};
